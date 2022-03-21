@@ -7,26 +7,19 @@ using UnityEngine.SceneManagement;
 using UnityEditor;
 #endif
 
-
 public class MenuUIManager : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    public void StartGame()
+    private void StartGame() // start button
     {
         SceneManager.LoadScene(1);
     }
 
-    public void BackMenu()
+    private void BackMenu() // back button
     {
         SceneManager.LoadScene(0);
     }
 
-    public void Exit()
+    private void Exit() // exit game
     {
 
 #if UNITY_EDITOR

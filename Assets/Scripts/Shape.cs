@@ -6,26 +6,22 @@ using UnityEngine.UI;
 public class Shape : MonoBehaviour
 {
     public Text ansText;
+    public string ShapeName { get; private set; } = "Shape"; // Encapsulation
 
-    // Start is called before the first frame update
-    public virtual void Start()
-    {
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
-    public void OnMouseDown()
+    private void OnMouseDown() // abstraction
     {
         DisplayText();
+        DisplayLog();
     }
 
-    public virtual void DisplayText()
+    public virtual void DisplayText() // polymorphism
     {
         ansText.text = "You have selected color shape.";
+    }
+
+    private void DisplayLog()
+    {
+        Debug.Log($"Selected The {ShapeName}: {gameObject.name}");
     }
 
 }
